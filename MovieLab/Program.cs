@@ -13,10 +13,10 @@ new Movie("Four Brothers", "Drama"),
 new Movie("Blow", "Drama"),
 };
 bool goAgain = true;
-Console.WriteLine("Welcome to the Movie List Application!");
+Console.WriteLine("Welcome to the Movie List Application!\n");
 while (goAgain)
 {
-    Console.Write("Please pick a genre: \nHorror, Animated, Drama, or Comedy ");
+    Console.Write("Please pick a genre: \nHorror, Animated, Drama, or Comedy: ");
     string userInput = Console.ReadLine().ToLower().Trim();
     List<Movie> movies = movieList.Where(x => x.Category.ToLower().Trim() == userInput).ToList();
     if (movies.Count == 0)
@@ -27,12 +27,12 @@ while (goAgain)
     {
         foreach (Movie m in movies)
         {
-            Console.WriteLine(m.Title);
+            Console.WriteLine($"\n{m.Title}");
         }
     }
     while (true)
     {
-        Console.WriteLine("Would you like to pick another category? Please enter y/n");
+        Console.WriteLine("\nWould you like to pick another category? Please enter y/n");
         string choice = Console.ReadLine().Trim().ToLower();
         if (choice == "y")
         {
